@@ -84,10 +84,13 @@ Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
+" Plug '~/my-prototype-plugin'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ervandew/supertab'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'mattn/emmet-vim'
 
 " Themes
 Plug 'morhetz/gruvbox'
@@ -116,6 +119,26 @@ map <C-a> /[^\x00-\x7F]<CR>
 map <C-c> :.w !pbcopy<CR><CR>
 map <C-v> :r !pbpaste<CR>
 
+let g:user_emmet_leader_key='<Tab>'
+" let g:user_zen_expandabbr_key = '<tab>'
+
+" Supertab
+" let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+
+" let g:SuperTabDefaultCompletionTypeDiscovery = [
+" \ "&completefunc:<c-x><c-u>",
+" \ "&omnifunc:<c-x><c-o>",
+" \ ]
+"let g:SuperTabLongestHighlight = 1
+
+" set paste
+
+" h ins-completion
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 set backup
 
 set undodir=~/.vim/undo//
@@ -127,6 +150,8 @@ set writebackup
 set backupcopy=yes
 
 au BufWritePre * let &bex = '@' . strftime("%F.%H:%M:%S")
+au BufRead,BufNewFile *.theme set filetype=php
+" au BufRead,BufNewFile *.scss set filetype=sass
 
 " highlight NonText guifg=#4a4a59
 " highlight SpecialKey guifg=#4a4a59
