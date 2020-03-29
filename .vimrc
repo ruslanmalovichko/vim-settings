@@ -13,6 +13,8 @@ Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
+source $VIMRUNTIME/defaults.vim
+
 colorscheme gruvbox
 set background=dark
 syntax on
