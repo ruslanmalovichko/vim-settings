@@ -33,8 +33,10 @@ au VimEnter * NERDTreeToggle
 map <C-a> /[^\x00-\x7F]<CR>
 
 " Set up clipboard
-map <C-c> :.w !pbcopy<CR><CR>
-map <C-v> :r !pbpaste<CR>
+" map <C-c> :.w !pbcopy<CR><CR>
+" map <C-v> :r !pbpaste<CR>
+" set clipboard=unnamedplus
+set clipboard=unnamed
 
 let g:user_emmet_leader_key='<Tab>'
 
