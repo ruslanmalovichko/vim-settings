@@ -1,18 +1,3 @@
-call plug#begin('~/.vim/plugged')
-
-" NERDTreeToggle
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-" SCSS
-Plug 'cakebaker/scss-syntax.vim'
-
-" Emmet
-Plug 'mattn/emmet-vim'
-
-" Theme
-Plug 'morhetz/gruvbox'
-call plug#end()
-
 source $VIMRUNTIME/defaults.vim
 
 colorscheme gruvbox
