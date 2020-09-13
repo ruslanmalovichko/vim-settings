@@ -10,12 +10,12 @@ set shiftwidth=2
 set hls is
 
 " NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-a><C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 au VimEnter * NERDTreeToggle
 
 " Highlight non-ascii characters
-map <C-a> /[^\x00-\x7F]<CR>
+map <C-a><C-a> /[^\x00-\x7F]<CR>
 
 " Set up clipboard
 " map <C-c> :.w !pbcopy<CR><CR>
@@ -42,3 +42,4 @@ set listchars=tab:>·,trail:~,extends:>,precedes:<,space:·,nbsp:↔,conceal:¬
 set list
 
 set foldmethod=manual
+
