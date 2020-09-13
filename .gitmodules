@@ -10,3 +10,6 @@
 [submodule "colors/start/gruvbox"]
 	path = colors/start/gruvbox
 	url = https://github.com/morhetz/gruvbox
+[submodule "plugins/start/vim-visual-multi"]
+	path = plugins/start/vim-visual-multi
+	url = https://github.com/mg979/vim-visual-multi
