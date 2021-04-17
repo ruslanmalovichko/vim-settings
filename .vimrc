@@ -42,4 +42,5 @@ set listchars=tab:>·,trail:~,extends:>,precedes:<,space:·,nbsp:↔,conceal:¬
 set list
 
 set foldmethod=manual
+let g:PHP_vintage_case_default_indent=1 " Change php switch case formating
 
