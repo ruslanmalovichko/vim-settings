@@ -13,3 +13,6 @@
 [submodule "plugins/start/vim-visual-multi"]
 	path = plugins/start/vim-visual-multi
 	url = https://github.com/mg979/vim-visual-multi
+[submodule "plugins/start/vim-blade"]
+	path = plugins/start/vim-blade
+	url = https://github.com/jwalton512/vim-blade
