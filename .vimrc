@@ -44,3 +44,12 @@ set list
 set foldmethod=manual
 let g:PHP_vintage_case_default_indent=1 " Change php switch case formating
 
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap < <><left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
