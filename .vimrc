@@ -37,6 +37,8 @@ au BufWritePre * let &bex = '@' . strftime("%F.%H:%M:%S")
 " Filetype
 au BufRead,BufNewFile *.theme set filetype=php
 au BufRead,BufNewFile *.html.twig set filetype=html
+au BufRead,BufNewFile *.json set filetype=json
+" au BufRead,BufNewFile *.ts set filetype=javascript
 
 set listchars=tab:>·,trail:~,extends:>,precedes:<,space:·,nbsp:↔,conceal:¬
 set list
