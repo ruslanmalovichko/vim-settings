@@ -74,3 +74,5 @@ function! s:show_documentation()
   endif
 endfunction
 
+" phpls.path "/mnt/data/docker-projects/bofair/html/index.php"
+
