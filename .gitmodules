@@ -1,6 +1,3 @@
-[submodule "plugins/start/nerdtree"]
-	path = plugins/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree
 [submodule "plugins/start/scss-syntax.vim"]
 	path = plugins/start/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim
