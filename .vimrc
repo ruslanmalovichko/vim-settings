@@ -4,8 +4,9 @@ colorscheme gruvbox
 set background=dark
 syntax on
 set number
-set expandtab
 set tabstop=2
+set expandtab
+" set softtabstop=2
 set shiftwidth=2
 set hls is
 
@@ -74,5 +75,21 @@ function! s:show_documentation()
   endif
 endfunction
 
-" phpls.path "/mnt/data/docker-projects/bofair/html/index.php"
+" By default, numbers with a leading zero are interpreted as octal. Interpret all numbers to decimal.
+set nrformats=
+
+" Change Autocomplete settings
+" set wildmode=longest,list
+set wildmenu
+set wildmode=full
+
+" Change max command history storage
+set history=10000
+
+" Add %% shortcut for getting path to active catalog. Like %:h<Tab>
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Install netrw. Currently not needed. Installed by default
+" set nocompatible
+" filetype plugin on
 
