@@ -1,0 +1,15 @@
+[submodule "plugins/start/scss-syntax.vim"]
+	path = plugins/start/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim
+[submodule "plugins/start/emmet-vim"]
+	path = plugins/start/emmet-vim
+	url = https://github.com/mattn/emmet-vim
+[submodule "colors/start/gruvbox"]
+	path = colors/start/gruvbox
+	url = https://github.com/morhetz/gruvbox
+[submodule "plugins/start/vim-visual-multi"]
+	path = plugins/start/vim-visual-multi
+	url = https://github.com/mg979/vim-visual-multi
+[submodule "plugins/start/vim-blade"]
+	path = plugins/start/vim-blade
+	url = https://github.com/jwalton512/vim-blade
