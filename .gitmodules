@@ -16,3 +16,6 @@
 [submodule "plugins/start/vim-twig"]
 	path = plugins/start/vim-twig
 	url = https://github.com/qbbr/vim-twig
+[submodule "plugins/start/copilot.vim"]
+	path = plugins/start/copilot.vim
+	url = https://github.com/github/copilot.vim
