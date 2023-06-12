@@ -13,3 +13,6 @@
 [submodule "plugins/start/vim-blade"]
 	path = plugins/start/vim-blade
 	url = https://github.com/jwalton512/vim-blade
+[submodule "plugins/start/vim-twig"]
+	path = plugins/start/vim-twig
+	url = https://github.com/qbbr/vim-twig
