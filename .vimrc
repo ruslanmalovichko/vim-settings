@@ -39,7 +39,7 @@ au BufWritePre * let &bex = '@' . strftime("%F.%H:%M:%S")
 " Filetype
 au BufRead,BufNewFile *.theme set filetype=php
 au BufRead,BufNewFile *.module set filetype=php
-au BufRead,BufNewFile *.html.twig set filetype=html
+" au BufRead,BufNewFile *.html.twig set filetype=html
 au BufRead,BufNewFile *.json set filetype=json
 " au BufRead,BufNewFile *.ts set filetype=javascript
 
@@ -49,14 +49,14 @@ set list
 set foldmethod=manual
 let g:PHP_vintage_case_default_indent=1 " Change php switch case formating
 
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap < <><left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+" inoremap " ""<left>
+" inoremap ' ''<left>
+" inoremap ( ()<left>
+" inoremap [ []<left>
+" inoremap { {}<left>
+" inoremap < <><left>
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
 
 " Remap keys for gotos. Use gd as VSCode
 nmap <silent> gd <Plug>(coc-definition)
