@@ -19,3 +19,6 @@
 [submodule "plugins/start/copilot.vim"]
 	path = plugins/start/copilot.vim
 	url = https://github.com/github/copilot.vim
+[submodule "plugins/start/vim-gitgutter"]
+	path = plugins/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
