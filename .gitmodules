@@ -22,3 +22,6 @@
 [submodule "plugins/start/vim-gitgutter"]
 	path = plugins/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule "plugins/start/omnisharp-vim"]
+	path = plugins/start/omnisharp-vim
+	url = https://github.com/OmniSharp/omnisharp-vim

@@ -148,3 +148,7 @@ xnoremap & :&&<CR>
 " let g:ale_php_phpstan_autoload = 'vendor/autoload.php'
 " let g:ale_php_phpstan_autoload = '/media/ruslan/data/docker-projects/icca/vendor/autoload.php'
 " let g:ale_php_phpstan_autoload = '/media/ruslan/data/docker-projects/icca'
+
+" dotnet
+" let g:OmniSharp_server_use_mono = 1
+let g:OmniSharp_server_use_net6 = 1
