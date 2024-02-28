@@ -152,3 +152,8 @@ xnoremap & :&&<CR>
 " dotnet
 " let g:OmniSharp_server_use_mono = 1
 let g:OmniSharp_server_use_net6 = 1
+
+" change copilot keybindings
+imap <silent> <C-j> <Plug>(copilot-next)
+imap <silent> <C-k> <Plug>(copilot-previous)
+imap <silent> <C-\> <Plug>(copilot-dismiss)
