@@ -13,9 +13,6 @@
 [submodule "plugins/start/vim-blade"]
 	path = plugins/start/vim-blade
 	url = https://github.com/jwalton512/vim-blade
-[submodule "plugins/start/vim-twig"]
-	path = plugins/start/vim-twig
-	url = https://github.com/qbbr/vim-twig
 [submodule "plugins/start/copilot.vim"]
 	path = plugins/start/copilot.vim
 	url = https://github.com/github/copilot.vim
@@ -25,3 +22,15 @@
 [submodule "plugins/start/omnisharp-vim"]
 	path = plugins/start/omnisharp-vim
 	url = https://github.com/OmniSharp/omnisharp-vim
+[submodule "colors/start/nordtheme-vim"]
+	path = colors/start/nordtheme-vim
+	url = https://github.com/nordtheme/vim
+[submodule "plugins/start/vim-suda"]
+	path = plugins/start/vim-suda
+	url = https://github.com/lambdalisue/vim-suda
+[submodule "plugins/start/vifm.vim"]
+	path = plugins/start/vifm.vim
+	url = https://github.com/vifm/vifm.vim
+[submodule "plugins/start/vim-twig"]
+	path = plugins/start/vim-twig
+	url = https://github.com/lumiliet/vim-twig
