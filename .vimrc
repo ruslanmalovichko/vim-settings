@@ -1,13 +1,77 @@
-source $VIMRUNTIME/defaults.vim
+if has('nvim')
+  let g:neovim = 1
+endif
 
-colorscheme gruvbox
+if exists('g:neovim')
+  " Neovim settings
+  " Check if nvim was started with -Vifm parameter
+  " if index(v:argv, '-Vifm') >= 0
+  "   autocmd VimEnter * Vifm
+  " endif
+
+  if argc() == 0 && index(v:argv, '-Vifm') >= 0
+    autocmd VimEnter * Vifm
+  endif
+
+  " Enable bold and italic fonts
+  set t_ZH=[3m
+  set t_ZR=[23m
+  set t_md=[1m
+  set t_me=[0m
+
+  " Backup
+  set undodir=~/.config/nvim/undo//
+  set backupdir=~/.config/nvim/backup//
+  set directory=~/.config/nvim/swp//
+
+  " Return cursor to last position
+  augroup remember_cursor_position
+    autocmd!
+    autocmd BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \   exe "normal! g`\"" |
+          \ endif
+  augroup END
+else
+  " vim settings
+  " Connect /usr/share/vim/vim91/defaults.vim
+  source $VIMRUNTIME/defaults.vim
+
+  " Backup
+  set undodir=~/.vim/undo//
+  set backupdir=~/.vim/backup//
+  set directory=~/.vim/swp//
+endif
+
+set nocompatible
+" filetype plugin on
+filetype plugin indent on
+
+" let g:nord_bold = 1
+" let g:nord_italic = 1
+" let g:nord_italic_comments = 1
+" let g:nord_underline = 1
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+set runtimepath+=~/.vim/plugins/start/nordtheme-vim
+packadd! nordtheme-vim
+colorscheme nord
+
+" colorscheme gruvbox
 set background=dark
+" set background=light
 syntax on
+syntax enable
+filetype plugin indent on
 set number
+" set relativenumber " Relative numbers for moving like 3k
 set tabstop=2
 set expandtab
-" set softtabstop=2
+set softtabstop=2 " Do not use tabs
 set shiftwidth=2
+set cursorline
 set hls is
 
 " NERDTree
@@ -21,17 +85,19 @@ map <C-a><C-a> /[^\x00-\x7F]<CR>
 " Set up clipboard
 " map <C-c> :.w !pbcopy<CR><CR>
 " map <C-v> :r !pbpaste<CR>
+" map <C-c> :.w !xclip -selection clipboard<CR><CR>
+" map <C-v> :r !xclip -selection clipboard -o<CR>
 " set clipboard=unnamedplus
 " set clipboard=unnamed
-set clipboard=unnamed,unnamedplus
+" set clipboard=unnamed,unnamedplus
+if has('clipboard')
+  set clipboard=unnamedplus
+endif
 
 let g:user_emmet_leader_key='<Tab>'
 
 " Backup
 set backup
-set undodir=~/.vim/undo//
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swp//
 set writebackup
 set backupcopy=yes
 au BufWritePre * let &bex = '@' . strftime("%F.%H:%M:%S")
@@ -82,6 +148,7 @@ set nrformats=
 
 " Change Autocomplete settings
 " set wildmode=longest,list
+" When using : and <Tab>, show all matches
 set wildmenu
 set wildmode=full
 
@@ -89,18 +156,14 @@ set wildmode=full
 set history=10000
 
 " Add %% shortcut for getting path to active catalog. Like %:h<Tab>
+" Use :%% - current path
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Use <cr> to confirm completion
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
-" Settings for netrw
-set nocompatible
-filetype plugin on
-
 " Enable matchit
-set nocompatible
-filetype plugin on
+" For example, use % to jump between function and class in PHP
 runtime macros/matchit.vim
 
 " In ~/.vim/ftplugin/javascript.vim, or somewhere similar.
@@ -111,10 +174,10 @@ let b:ale_fixers = ['prettier', 'eslint']
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 
 " Settings for macroses in multiple files
-set nocompatible
 filetype plugin indent on
 set hidden
 if has("autocmd")
+  " when onpening a file with .rb extension, set tabstop to 2 spaces
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
@@ -157,3 +220,74 @@ let g:OmniSharp_server_use_net6 = 1
 imap <silent> <C-j> <Plug>(copilot-next)
 imap <silent> <C-k> <Plug>(copilot-previous)
 imap <silent> <C-\> <Plug>(copilot-dismiss)
+
+let mapleader = " "
+
+" Fast exit insert mode
+" inoremap jk <Esc>
+
+" Open NERDTree on startup
+" nnoremap <leader>n :NERDTreeToggle<CR>
+
+" Switch theme
+" nnoremap <leader>tt :source ~/.config/nvim/configs/theme.vim<CR>
+
+" Remove trailing whitespace on save
+" autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * silent! %s/\s\+$//e
+
+" Automatically wrap lines for markdown files. For files with .md extension
+autocmd FileType markdown setlocal wrap linebreak
+
+" if $TERM_PROGRAM ==# 'alacritty'
+"   " Alacritty settings
+"   set guifont=JetBrainsMono\ Nerd\ Font:h12
+" elseif $TERM_PROGRAM ==# 'WezTerm'
+"   " WezTerm settings
+"   set guifont=FiraCode\ Nerd\ Font:h12
+" elseif $TERM_PROGRAM ==# 'Apple_Terminal'
+"   " macOS Terminal settings
+" endif
+
+" if $TERM ==# 'xterm-kitty'
+"   " In Kitty
+" elseif $TERM ==# 'alacritty'
+"   " In Alacritty
+" elseif $TERM =~# 'xterm'
+"   " Usually xterm
+" endif
+
+"  Check if running in GUI or terminal
+" if has('gui_running') || exists('g:neovide') || exists('g:goneovim')
+"   " GUI-Mode (GVim, Neovide, Goneovim)
+"
+"   " Set font (example for Nerd Fonts)
+"   set guifont=JetBrainsMono\ Nerd\ Font:h12
+"
+"   " More contrast
+"   colorscheme nord
+"
+" else
+"   " Terminal-Mode
+  " if $TERM ==# 'xterm-kitty'
+  "   " In Kitty
+  " elseif $TERM ==# 'alacritty'
+  "   " In Alacritty
+  " elseif $TERM =~# 'xterm'
+  "   " Usually xterm
+  " endif
+" endif
+
+" Change colorscheme by time
+" function! ChangeColorschemeByTime()
+"   let hour = str2nr(strftime("%H"))
+"   if hour >= 7 && hour < 19
+"     colorscheme onelight
+"     set background=light
+"   else
+"     colorscheme nord
+"     set background=dark
+"   endif
+" endfunction
+"
+" autocmd VimEnter * call ChangeColorschemeByTime()
