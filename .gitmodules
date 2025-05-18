@@ -34,3 +34,9 @@
 [submodule "plugins/start/vim-twig"]
 	path = plugins/start/vim-twig
 	url = https://github.com/lumiliet/vim-twig
+[submodule "plugins/start/plenary.nvim"]
+	path = plugins/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "plugins/start/CopilotChat.nvim"]
+	path = plugins/start/CopilotChat.nvim
+	url = https://github.com/CopilotC-Nvim/CopilotChat.nvim

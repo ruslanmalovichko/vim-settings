@@ -32,6 +32,12 @@ if exists('g:neovim')
           \   exe "normal! g`\"" |
           \ endif
   augroup END
+
+  " CopilotChat
+  " Default model 9: * GPT-4.1 (copilot:gpt-4.1)
+  lua require("CopilotChat").setup({})
+
+  lua vim.keymap.set('n', '<Space>ccq', function() local input = vim.fn.input("Quick Chat: ") if input ~= "" then require("CopilotChat").ask(input, {selection = require("CopilotChat.select").buffer}) end end, {desc = "CopilotChat - Quick chat"})
 else
   " vim settings
   " Connect /usr/share/vim/vim91/defaults.vim
