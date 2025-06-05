@@ -61,12 +61,20 @@ filetype plugin indent on
 if (has("termguicolors"))
   set termguicolors
 endif
-set runtimepath+=~/.vim/plugins/start/nordtheme-vim
-packadd! nordtheme-vim
-colorscheme nord
+
+" set runtimepath+=~/.vim/plugins/start/nordtheme-vim
+" packadd! nordtheme-vim
+" colorscheme nord
+
+colorscheme tokyonight
+
+" colorscheme tokyonight-night
+" colorscheme tokyonight-storm
+" colorscheme tokyonight-day
+" colorscheme tokyonight-moon
 
 " colorscheme gruvbox
-set background=dark
+" set background=dark
 " set background=light
 syntax on
 syntax enable

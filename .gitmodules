@@ -40,3 +40,6 @@
 [submodule "plugins/start/CopilotChat.nvim"]
 	path = plugins/start/CopilotChat.nvim
 	url = https://github.com/CopilotC-Nvim/CopilotChat.nvim
+[submodule "plugins/start/tokyonight.nvim"]
+	path = plugins/start/tokyonight.nvim
+	url = https://github.com/folke/tokyonight.nvim
